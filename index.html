@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://kit.fontawesome.com/83cc56bfc3.js" crossorigin="anonymous"></script>
+    <title>Neumorphic App</title>
+</head>
+<body>
+    
+    <!-- Container -->
+
+    <div class="container">
+
+        <!-- Fake Status Bar -->
+
+        <div class="status-bar">
+            <p id="time">7:24</p>
+            <div class="status-icons">
+                <i class="fa-solid fa-signal"></i>
+                <i class="fa-solid fa-wifi"></i>
+                <i class="fa-solid fa-battery-half"></i>
+            </div>
+        </div>
+
+        <!-- Settings Page Wrapper -->
+
+        <div class="page hidden-bottom" id="settings-page">
+            <button class="return" id="close">Close</button>
+            <div class="settings">
+                <label for="theme">Theme:</label>
+                <fieldset id="fieldset">
+                    <input type="radio" name="theme" class="theme clicked" id="white" value="white" checked>
+                    <input type="radio" name="theme" class="theme" id="dark" value="dark">
+                    <input type="radio" name="theme" class="theme" id="pink" value="pink">
+                    <input type="radio" name="theme" class="theme" id="blue" value="blue">
+                    <input type="radio" name="theme" class="theme" id="green" value="green">
+                    <input type="radio" name="theme" class="theme" id="purple" value="purple">
+                </fieldset>
+            </div>
+            <div class="settings">
+                <label for="disable">Disable Theme:</label>
+                <input type="checkbox" id="disable">
+                <div id="slider">
+                    <div id="slider-tab"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Page Wrapper -->
+
+        <div class="page visible" id="main-page">
+
+            <!-- Back and Options Buttons -->
+
+            <nav>
+                <button class="return"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="options"><i class="fa-solid fa-sliders"></i></button>
+            </nav>
+
+            <div class="list">
+                <h2>Playlists</h2>
+                <div class="playlists">
+                    <p class="playlist-name">My Playlist</p>
+                </div>
+                <div class="playlists">
+                    <p class="playlist-name">Playlist 2</p>
+                </div>
+                <div class="playlists">
+                    <p class="playlist-name">Another Playlist</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Playlist Page Wrapper -->
+
+        <div class="page hidden-right" id="playlist-page">
+
+            <!-- Back and Options Buttons -->
+
+            <nav>
+                <button class="return" id="playlist-page-back"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="options"><i class="fa-solid fa-sliders"></i></button>
+            </nav>
+
+            <div class="list">
+                <h2 id="playlist-title">My Playlist</h2>
+                <div class="song">
+                    <img src="./images/album-cover-1.jpg" alt="" class="thumbnail">
+                    <div>
+                        <p class="song-name">Song Name</p>
+                        <p><span class="artist-name">Artist Name</span> - <span class="album-name">Album Name</span></p>
+                    </div>
+                    <p class="song-time">3:27</p>
+                </div>
+                <div class="song">
+                    <img src="./images/album-cover-1.jpg" alt="" class="thumbnail">
+                    <div>
+                        <p class="song-name">Another Song Name</p>
+                        <p><span class="artist-name">Artist Name</span> - <span class="album-name">Album Name</span></p>
+                    </div>
+                    <p class="song-time">3:27</p>
+                </div>
+                <div class="song">
+                    <img src="./images/album-cover-1.jpg" alt="" class="thumbnail">
+                    <div>
+                        <p class="song-name">Yet Another Song Name</p>
+                        <p><span class="artist-name">Artist Name</span> - <span class="album-name">Album Name</span></p>
+                    </div>
+                    <p class="song-time">3:27</p>
+                </div>
+                <div class="song">
+                    <img src="./images/album-cover-1.jpg" alt="" class="thumbnail">
+                    <div>
+                        <p class="song-name">Addtional Song Name</p>
+                        <p><span class="artist-name">Artist Name</span> - <span class="album-name">Album Name</span></p>
+                    </div>
+                    <p class="song-time">3:27</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Song Page Wrapper -->
+
+        <div class="page hidden-right" id="song-page">
+
+            <!-- Back and Options Buttons -->
+
+            <nav>
+                <button class="return" id="song-page-back"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="options"><i class="fa-solid fa-sliders"></i></button>
+            </nav>
+
+            <!-- Artist Header -->
+
+            <div class="artist">
+                <p><em id="artist-title">Artist Name</em></p>
+            </div>
+
+            <!-- Album Cover -->
+
+            <img src="./images/album-cover-1.jpg" alt="" id="album-cover">
+
+            <!-- Track Info and Position -->
+
+            <div class="song-info">
+                <p id="song-title">Song Name</p>
+                <p id="album-title"><em>Album Name</em></p>
+                <div class="progress-bar">
+                    <div id="progress"></div>
+                    <div id="tracker">
+                        <div id="tracker-inner"></div>
+                    </div>
+                </div>
+                <div class="song-time">
+                    <p id="current-time">0:00</p>
+                    <p id="run-time">3:27</p>
+                </div>
+            </div>
+
+            <!-- Playback Controls -->
+
+            <div class="controls">
+                <button id="shuffle" class="control"><i class="fa-solid fa-shuffle"></i></button>
+                <button id="back" class="control"><i class="fa-solid fa-backward-step"></i></button>
+                <button id="play" class="control"><i id="play-icon" class="fa-solid fa-play"></i></button>
+                <button id="next" class="control"><i class="fa-solid fa-forward-step"></i></button>
+                <button id="repeat" class="control"><i class="fa-solid fa-repeat"></i></button>
+            </div>
+        </div>
+
+        <!-- Fake Phone Controls -->
+
+        <div class="bottom-controls">
+            <i class="fa-solid fa-arrow-left-long"></i>
+            <div class="home">
+                <div class="home-inner"></div>
+            </div>
+            <div class="menu">
+                <div class="menu-inner"></div>
+                <div class="menu-inner"></div>
+                <div class="menu-inner"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
